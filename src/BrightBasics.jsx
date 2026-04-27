@@ -414,7 +414,7 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
 
   /* FOOTER */
   .footer { padding:36px 16px 20px; overflow:hidden; }
-  .footer-inner { grid-template-columns:1fr 1fr; gap:20px; }
+  .footer-inner { grid-template-columns:repeat(3,1fr); gap:16px; }
   .footer-inner > div:first-child { grid-column:1 / -1; }
   .footer-bottom { flex-direction:column; align-items:flex-start; gap:10px; }
 }
