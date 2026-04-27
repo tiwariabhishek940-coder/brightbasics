@@ -339,7 +339,8 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
   .sale-cta { width:100%; text-align:center; padding:12px; }
 
   /* TRUST BAR */
-  .trust-inner { gap:16px; padding:0 16px; justify-content:flex-start; overflow-x:auto; flex-wrap:nowrap; }
+  .trust-inner { gap:12px; padding:10px 16px; justify-content:flex-start; overflow-x:auto; flex-wrap:nowrap; white-space:nowrap; }
+  .trust-item { flex-shrink:0; }
   .trust-item { font-size:12px; white-space:nowrap; flex-shrink:0; }
 
   /* SECTIONS */
