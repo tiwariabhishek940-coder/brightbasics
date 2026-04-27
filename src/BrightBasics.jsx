@@ -422,7 +422,7 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
 }
 
 .footer { background:var(--navy); padding:52px 24px 24px; }
-.footer-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px; width:100%; }
+.footer-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px; width:100%; box-sizing:border-box; }
 .footer-logo { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
 .footer-logo img { width:44px; height:44px; border-radius:50%; object-fit:cover; border:2px solid var(--teal); }
 .footer-logo-text { font-family:'Fraunces',serif; font-size:22px; font-weight:700; }
@@ -1211,7 +1211,7 @@ export default function BrightBasics() {
 
       {/* FOOTER */}
       <footer className="footer">
-        <div className="footer-inner">
+        <div className="footer-inner" style={{display:"grid"}}>
           <div>
             <div className="footer-logo">
               <img src="/brightbasics-logo.png" alt="BrightBasics"/>
