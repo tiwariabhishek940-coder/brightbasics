@@ -328,13 +328,14 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
   .age-pill { padding:7px 14px; font-size:12px; }
 
   /* HERO */
-  .hero { padding:36px 16px 40px; }
-  .hero-inner { grid-template-columns:1fr; gap:28px; }
-  .hero h1 { font-size:32px; }
-  .hero-sub { font-size:15px; margin-bottom:24px; }
-  .hero-ctas { gap:10px; }
+  .hero { padding:36px 0 40px; width:100%; }
+  .hero-inner { grid-template-columns:1fr; gap:28px; padding:0 20px; width:100%; box-sizing:border-box; margin:0 auto; }
+  .hero h1 { font-size:32px; width:100%; }
+  .hero-sub { font-size:15px; margin-bottom:24px; width:100%; }
+  .hero-eyebrow { max-width:100%; }
+  .hero-ctas { gap:10px; width:100%; }
   .btn-primary, .btn-secondary { padding:13px 24px; font-size:15px; }
-  .hero-stats { gap:20px; }
+  .hero-stats { gap:20px; width:100%; }
   .stat-val { font-size:24px; }
   .hero-cards { display:none !important; }
   .hcard { padding:14px; }
