@@ -330,7 +330,7 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
 
   /* SALE BANNER */
   .sale-banner { padding:16px; }
-  .sale-banner-inner { flex-direction:column; align-items:center; gap:12px; text-align:center; }
+  .sale-banner-inner { flex-direction:column; align-items:center; gap:12px; text-align:center; width:100%; }
   .sale-countdown { flex-direction:column; align-items:center; gap:8px; width:100%; }
   .sale-title { font-size:16px; text-align:center; }
   .sale-tag { font-size:10px; }
@@ -409,7 +409,8 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
 
   /* FOOTER */
   .footer { padding:36px 16px 20px; overflow:hidden; }
-  .footer-inner { grid-template-columns:1fr; gap:28px; }
+  .footer-inner { grid-template-columns:1fr 1fr; gap:20px; }
+  .footer-inner > div:first-child { grid-column:span 2; }
   .footer-bottom { flex-direction:column; align-items:flex-start; gap:10px; }
 }
 
