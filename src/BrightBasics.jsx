@@ -309,8 +309,10 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
   .age-pill { padding:7px 14px; font-size:12px; }
 
   /* HERO */
-  .hero { padding:36px 16px 40px; }
-  .hero-inner { grid-template-columns:1fr; gap:28px; }
+  .hero { padding:36px 16px 40px; width:100%; box-sizing:border-box; }
+  .hero-inner { grid-template-columns:1fr; gap:28px; width:100%; }
+  .hero-sub { max-width:100%; }
+  .hero-eyebrow { max-width:100%; }
   .hero h1 { font-size:32px; }
   .hero-sub { font-size:15px; margin-bottom:24px; }
   .hero-ctas { gap:10px; }
