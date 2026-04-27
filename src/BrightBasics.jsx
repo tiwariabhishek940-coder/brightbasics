@@ -46,7 +46,7 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
 .age-pill:hover { transform:translateY(-2px); box-shadow:var(--shadow-sm); }
 .age-pill.active { border-color:var(--orange)!important; box-shadow:0 0 0 3px rgba(255,107,26,0.15); }
 
-.hero { background:linear-gradient(135deg,#00A99D 0%,#00BFB3 40%,#008F84 100%); padding:60px 24px; position:relative; overflow:hidden; }
+.hero { background:linear-gradient(135deg,#00A99D 0%,#00BFB3 40%,#008F84 100%); padding:60px 24px; position:relative; overflow:hidden; width:100%; box-sizing:border-box; }
 .hero::before { content:''; position:absolute; top:-120px; right:-120px; width:480px; height:480px; border-radius:50%; background:rgba(255,255,255,0.06); pointer-events:none; }
 .hero::after { content:''; position:absolute; bottom:-80px; left:-60px; width:320px; height:320px; border-radius:50%; background:rgba(0,0,0,0.06); pointer-events:none; }
 .hero-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.1fr 0.9fr; align-items:center; gap:60px; position:relative; z-index:1; }
@@ -309,10 +309,8 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
   .age-pill { padding:7px 14px; font-size:12px; }
 
   /* HERO */
-  .hero { padding:36px 16px 40px; width:100%; box-sizing:border-box; }
-  .hero-inner { grid-template-columns:1fr; gap:28px; width:100%; }
-  .hero-sub { max-width:100%; }
-  .hero-eyebrow { max-width:100%; }
+  .hero { padding:36px 16px 40px; }
+  .hero-inner { grid-template-columns:1fr; gap:28px; }
   .hero h1 { font-size:32px; }
   .hero-sub { font-size:15px; margin-bottom:24px; }
   .hero-ctas { gap:10px; }
@@ -322,8 +320,6 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
   .hero-cards { grid-template-columns:1fr; gap:10px; }
   .hcard { padding:14px; }
   .hcard.wide { flex-direction:column; align-items:flex-start; gap:10px; }
-  .hero-cards { overflow:hidden; }
-  .hcard { width:100%; box-sizing:border-box; }
   .hcard-emoji { font-size:36px; }
   .hcard-name { font-size:13px; }
   .hcard-price { font-size:15px; }
@@ -334,7 +330,7 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
 
   /* SALE BANNER */
   .sale-banner { padding:16px; }
-  .sale-banner-inner { flex-direction:column; align-items:center; gap:12px; text-align:center; width:100%; }
+  .sale-banner-inner { flex-direction:column; align-items:center; gap:12px; text-align:center; }
   .sale-countdown { flex-direction:column; align-items:center; gap:8px; width:100%; }
   .sale-title { font-size:16px; text-align:center; }
   .sale-tag { font-size:10px; }
@@ -343,8 +339,7 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
   .sale-cta { width:100%; text-align:center; padding:12px; }
 
   /* TRUST BAR */
-  .trust-inner { gap:12px; padding:10px 16px; justify-content:flex-start; overflow-x:auto; flex-wrap:nowrap; white-space:nowrap; }
-  .trust-item { flex-shrink:0; }
+  .trust-inner { gap:16px; padding:0 16px; justify-content:flex-start; overflow-x:auto; flex-wrap:nowrap; }
   .trust-item { font-size:12px; white-space:nowrap; flex-shrink:0; }
 
   /* SECTIONS */
@@ -414,8 +409,7 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
 
   /* FOOTER */
   .footer { padding:36px 16px 20px; overflow:hidden; }
-  .footer-inner { grid-template-columns:repeat(3,1fr); gap:16px; }
-  .footer-inner > div:first-child { grid-column:1 / -1; }
+  .footer-inner { grid-template-columns:1fr; gap:28px; }
   .footer-bottom { flex-direction:column; align-items:flex-start; gap:10px; }
 }
 
@@ -428,7 +422,7 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
 }
 
 .footer { background:var(--navy); padding:52px 24px 24px; }
-.footer-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px; }
+.footer-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px; width:100%; }
 .footer-logo { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
 .footer-logo img { width:44px; height:44px; border-radius:50%; object-fit:cover; border:2px solid var(--teal); }
 .footer-logo-text { font-family:'Fraunces',serif; font-size:22px; font-weight:700; }
