@@ -336,7 +336,7 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
   .hero-ctas { gap:10px; width:100%; justify-content:flex-start; }
   .btn-primary { flex:1; text-align:center; padding:13px 16px; font-size:15px; }
   .btn-secondary { flex:1; text-align:center; padding:13px 16px; font-size:15px; }
-  .hero-stats { gap:24px; width:100%; justify-content:flex-start; }
+  .hero-stats { gap:24px; width:100%; justify-content:center; }
   .stat-val { font-size:24px; }
   .hero-cards { display:none !important; }
   .hcard { padding:14px; }
