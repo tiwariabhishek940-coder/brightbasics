@@ -291,6 +291,133 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
 .age-guide-title .accent { color:var(--yellow); }
 .age-guide-sub { font-size:15px; color:rgba(255,255,255,0.6); margin-top:6px; font-weight:700; }
 
+/* ── MOBILE RESPONSIVE ───────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* NAV */
+  .nav-inner { padding:0 14px; height:58px; gap:10px; }
+  .logo { font-size:20px; }
+  .logo img { width:44px; height:44px; }
+  .search-bar { display:none; }
+  .nav-links { display:none; }
+  .nav-icons { margin-left:auto; }
+  .icon-btn { width:36px; height:36px; font-size:15px; }
+
+  /* AGE BAR */
+  .age-bar-inner { padding:10px 14px; gap:8px; }
+  .age-label { display:none; }
+  .age-pill { padding:7px 14px; font-size:12px; }
+
+  /* HERO */
+  .hero { padding:36px 16px 40px; }
+  .hero-inner { grid-template-columns:1fr; gap:28px; }
+  .hero h1 { font-size:32px; }
+  .hero-sub { font-size:15px; margin-bottom:24px; }
+  .hero-ctas { gap:10px; }
+  .btn-primary, .btn-secondary { padding:13px 24px; font-size:15px; }
+  .hero-stats { gap:20px; }
+  .stat-val { font-size:24px; }
+  .hero-cards { grid-template-columns:1fr 1fr; gap:10px; }
+  .hcard { padding:14px; }
+  .hcard.wide { flex-direction:column; align-items:flex-start; gap:10px; }
+  .hcard-emoji { font-size:36px; }
+  .hcard-name { font-size:13px; }
+  .hcard-price { font-size:15px; }
+
+  /* BIS STRIP */
+  .bis-strip-inner { gap:16px; }
+  .bis-strip-item { font-size:11px; }
+
+  /* SALE BANNER */
+  .sale-banner { padding:14px 16px; }
+  .sale-banner-inner { flex-direction:column; align-items:flex-start; gap:12px; }
+  .sale-title { font-size:16px; }
+  .sale-tag { font-size:10px; }
+  .timer-val { font-size:18px; }
+  .sale-cta { width:100%; text-align:center; padding:10px; }
+
+  /* TRUST BAR */
+  .trust-inner { gap:16px; padding:0 16px; justify-content:flex-start; overflow-x:auto; flex-wrap:nowrap; }
+  .trust-item { font-size:12px; white-space:nowrap; flex-shrink:0; }
+
+  /* SECTIONS */
+  .section { padding:40px 16px; }
+  .section-head { flex-direction:column; align-items:flex-start; gap:14px; margin-bottom:20px; }
+  .section-title { font-size:26px; }
+  .wrap { padding:0 16px; }
+
+  /* PRODUCT GRID */
+  .product-grid { grid-template-columns:repeat(2,1fr); gap:12px; }
+  .product-img { height:150px; font-size:60px; }
+  .product-name { font-size:14px; }
+  .product-price { font-size:18px; }
+  .product-body { padding:12px; }
+
+  /* FOUNDER STRIP */
+  .founder-strip { flex-direction:column; margin:0 16px 40px; padding:24px; gap:20px; text-align:center; }
+  .founder-picks { justify-content:center; }
+  .founder-quote { font-size:17px; }
+
+  /* WHATSAPP NUDGE */
+  .wa-nudge { flex-direction:column; margin:0 16px 40px; padding:24px; gap:20px; }
+  .wa-form { min-width:unset; width:100%; }
+  .wa-title { font-size:18px; }
+
+  /* BUNDLES */
+  .bundle-section { padding:40px 16px; }
+  .bundle-grid { grid-template-columns:1fr; gap:16px; }
+  .bundle-name { font-size:18px; }
+  .bundle-items { gap:8px; }
+
+  /* MOMMY REVIEWS */
+  .mommy-section { padding:40px 16px; }
+  .mommy-grid { grid-template-columns:1fr; gap:14px; }
+
+  /* GIFT BANNER */
+  .gift-banner { flex-direction:column; margin:0 16px 40px; padding:24px; gap:20px; }
+  .gb-title { font-size:22px; }
+  .gb-btn { width:100%; text-align:center; }
+
+  /* CATEGORIES */
+  .cat-grid { grid-template-columns:repeat(3,1fr); gap:10px; }
+  .cat-icon { font-size:28px; }
+  .cat-name { font-size:12px; }
+  .cat-count { font-size:10px; }
+
+  /* DIY */
+  .diy-grid { grid-template-columns:1fr; gap:14px; }
+
+  /* REORDER */
+  .reorder-section { padding:40px 16px; }
+  .reorder-grid { grid-template-columns:1fr; gap:12px; }
+
+  /* SPECIAL NEEDS */
+  .special-section { padding:40px 16px; }
+  .special-title { font-size:28px; }
+  .special-cats { grid-template-columns:repeat(2,1fr); gap:10px; }
+  .special-products { grid-template-columns:repeat(2,1fr); gap:12px; }
+  .sp-img { height:140px; font-size:58px; }
+  .sp-name { font-size:13px; }
+
+  /* AGE GUIDE */
+  .age-guide-section { padding:40px 16px; }
+  .age-guide-grid { grid-template-columns:repeat(2,1fr); gap:10px; }
+  .age-guide-title { font-size:26px; }
+  .agc-range { font-size:18px; }
+
+  /* FOOTER */
+  .footer { padding:36px 16px 20px; }
+  .footer-inner { grid-template-columns:1fr; gap:28px; }
+}
+
+@media (max-width: 400px) {
+  .product-grid { grid-template-columns:1fr; }
+  .special-products { grid-template-columns:1fr; }
+  .cat-grid { grid-template-columns:repeat(2,1fr); }
+  .hero-cards { grid-template-columns:1fr; }
+  .hcard.wide { display:flex; }
+}
+
 .footer { background:var(--navy); padding:52px 24px 24px; }
 .footer-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px; }
 .footer-logo { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
