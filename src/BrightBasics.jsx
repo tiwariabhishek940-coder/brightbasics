@@ -18,8 +18,8 @@ const STYLES = `
   --shadow-md: 0 8px 28px rgba(0,169,157,0.13);
   --shadow-lg: 0 16px 48px rgba(0,169,157,0.15);
 }
-body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--text); }
-.wrap { max-width:1200px; margin:0 auto; padding:0 24px; }
+body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--text); overflow-x:hidden; }
+.wrap { max-width:100%; margin:0 auto; padding:0 24px; box-sizing:border-box; }
 
 .nav { position:sticky; top:0; z-index:100; background:white; border-bottom:3px solid var(--teal); box-shadow:0 2px 16px rgba(0,169,157,0.10); }
 .nav-inner { display:flex; align-items:center; gap:20px; padding:0 24px; height:68px; max-width:1200px; margin:0 auto; }
@@ -78,7 +78,7 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
 .trust-inner { max-width:1200px; margin:0 auto; display:flex; justify-content:center; align-items:center; gap:36px; flex-wrap:wrap; }
 .trust-item { display:flex; align-items:center; gap:8px; font-size:13px; font-weight:800; color:white; }
 
-.section { padding:60px 24px; }
+.section { padding:60px 24px; max-width:100%; overflow:hidden; }
 .section.alt { background:var(--off-white); }
 .section-head { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:28px; }
 .section-title { font-family:'Fraunces',serif; font-size:34px; font-weight:700; color:var(--text); line-height:1.15; }
@@ -317,7 +317,7 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
   .btn-primary, .btn-secondary { padding:13px 24px; font-size:15px; }
   .hero-stats { gap:20px; }
   .stat-val { font-size:24px; }
-  .hero-cards { grid-template-columns:1fr 1fr; gap:10px; }
+  .hero-cards { grid-template-columns:1fr; gap:10px; }
   .hcard { padding:14px; }
   .hcard.wide { flex-direction:column; align-items:flex-start; gap:10px; }
   .hcard-emoji { font-size:36px; }
@@ -329,12 +329,14 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
   .bis-strip-item { font-size:11px; }
 
   /* SALE BANNER */
-  .sale-banner { padding:14px 16px; }
-  .sale-banner-inner { flex-direction:column; align-items:flex-start; gap:12px; }
-  .sale-title { font-size:16px; }
+  .sale-banner { padding:16px; }
+  .sale-banner-inner { flex-direction:column; align-items:center; gap:12px; text-align:center; }
+  .sale-countdown { flex-direction:column; align-items:center; gap:8px; width:100%; }
+  .sale-title { font-size:16px; text-align:center; }
   .sale-tag { font-size:10px; }
+  .sale-timer { justify-content:center; }
   .timer-val { font-size:18px; }
-  .sale-cta { width:100%; text-align:center; padding:10px; }
+  .sale-cta { width:100%; text-align:center; padding:12px; }
 
   /* TRUST BAR */
   .trust-inner { gap:16px; padding:0 16px; justify-content:flex-start; overflow-x:auto; flex-wrap:nowrap; }
@@ -406,8 +408,9 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
   .agc-range { font-size:18px; }
 
   /* FOOTER */
-  .footer { padding:36px 16px 20px; }
+  .footer { padding:36px 16px 20px; overflow:hidden; }
   .footer-inner { grid-template-columns:1fr; gap:28px; }
+  .footer-bottom { flex-direction:column; align-items:flex-start; gap:10px; }
 }
 
 @media (max-width: 400px) {
