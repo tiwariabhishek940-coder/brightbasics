@@ -291,6 +291,25 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
 .age-guide-title .accent { color:var(--yellow); }
 .age-guide-sub { font-size:15px; color:rgba(255,255,255,0.6); margin-top:6px; font-weight:700; }
 
+.footer { background:var(--navy); padding:52px 24px 24px; }
+.footer-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px; width:100%; box-sizing:border-box; }
+.footer-logo { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+.footer-logo img { width:44px; height:44px; border-radius:50%; object-fit:cover; border:2px solid var(--teal); }
+.footer-logo-text { font-family:'Fraunces',serif; font-size:22px; font-weight:700; }
+.f-bright { color:var(--orange); }
+.f-basics { color:var(--yellow); }
+.footer-desc { font-size:14px; color:rgba(255,255,255,0.5); line-height:1.7; margin-bottom:22px; font-weight:600; }
+.footer-social { display:flex; gap:10px; }
+.social-btn { width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:rgba(255,255,255,0.7); font-size:14px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 0.2s,color 0.2s; }
+.social-btn:hover { background:var(--teal); color:white; border-color:var(--teal); }
+.footer-col-title { font-size:11px; font-weight:800; color:var(--teal); text-transform:uppercase; letter-spacing:0.09em; margin-bottom:18px; }
+.footer-link { display:block; font-size:14px; color:rgba(255,255,255,0.5); margin-bottom:11px; cursor:pointer; transition:color 0.2s; font-weight:600; }
+.footer-link:hover { color:white; }
+.footer-bottom { max-width:1200px; margin:0 auto; border-top:1px solid rgba(255,255,255,0.1); padding-top:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
+.footer-copy { font-size:13px; color:rgba(255,255,255,0.35); font-weight:600; }
+.footer-tags { display:flex; gap:8px; }
+.footer-tag { font-size:11px; color:rgba(255,255,255,0.4); background:rgba(255,255,255,0.07); border-radius:100px; padding:4px 11px; font-weight:700; }
+
 /* ── MOBILE RESPONSIVE ───────────────────────────────────── */
 @media (max-width: 768px) {
 
@@ -421,24 +440,6 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
   .hcard.wide { display:flex; }
 }
 
-.footer { background:var(--navy); padding:52px 24px 24px; }
-.footer-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px; width:100%; box-sizing:border-box; }
-.footer-logo { display:flex; align-items:center; gap:10px; margin-bottom:14px; }
-.footer-logo img { width:44px; height:44px; border-radius:50%; object-fit:cover; border:2px solid var(--teal); }
-.footer-logo-text { font-family:'Fraunces',serif; font-size:22px; font-weight:700; }
-.f-bright { color:var(--orange); }
-.f-basics { color:var(--yellow); }
-.footer-desc { font-size:14px; color:rgba(255,255,255,0.5); line-height:1.7; margin-bottom:22px; font-weight:600; }
-.footer-social { display:flex; gap:10px; }
-.social-btn { width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:rgba(255,255,255,0.7); font-size:14px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 0.2s,color 0.2s; }
-.social-btn:hover { background:var(--teal); color:white; border-color:var(--teal); }
-.footer-col-title { font-size:11px; font-weight:800; color:var(--teal); text-transform:uppercase; letter-spacing:0.09em; margin-bottom:18px; }
-.footer-link { display:block; font-size:14px; color:rgba(255,255,255,0.5); margin-bottom:11px; cursor:pointer; transition:color 0.2s; font-weight:600; }
-.footer-link:hover { color:white; }
-.footer-bottom { max-width:1200px; margin:0 auto; border-top:1px solid rgba(255,255,255,0.1); padding-top:20px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
-.footer-copy { font-size:13px; color:rgba(255,255,255,0.35); font-weight:600; }
-.footer-tags { display:flex; gap:8px; }
-.footer-tag { font-size:11px; color:rgba(255,255,255,0.4); background:rgba(255,255,255,0.07); border-radius:100px; padding:4px 11px; font-weight:700; }
 `;
 
 const AGES = [
@@ -594,6 +595,7 @@ export default function BrightBasics() {
   const [activeNeed, setActiveNeed] = useState('ASD');
 
   const handleWish = (id) => setLocalWish(w => w.includes(id) ? w.filter(x=>x!==id) : [...w,id]);
+  const isMobile = window.innerWidth <= 768;
 
   return (
     <>
@@ -1211,7 +1213,7 @@ export default function BrightBasics() {
 
       {/* FOOTER */}
       <footer className="footer">
-        <div className="footer-inner" style={{display:"grid"}}>
+        <div className="footer-inner" style={{gridTemplateColumns: isMobile ? "1fr" : "2fr 1fr 1fr 1fr", gap: isMobile ? "24px" : "40px"}}>
           <div>
             <div className="footer-logo">
               <img src="/brightbasics-logo.png" alt="BrightBasics"/>
