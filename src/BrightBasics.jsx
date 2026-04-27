@@ -336,7 +336,7 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
   .btn-primary, .btn-secondary { padding:13px 24px; font-size:15px; }
   .hero-stats { gap:20px; }
   .stat-val { font-size:24px; }
-  .hero-cards { grid-template-columns:1fr; gap:10px; }
+  .hero-cards { display:none !important; }
   .hcard { padding:14px; }
   .hcard.wide { flex-direction:column; align-items:flex-start; gap:10px; }
   .hcard-emoji { font-size:36px; }
@@ -344,8 +344,9 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
   .hcard-price { font-size:15px; }
 
   /* BIS STRIP */
-  .bis-strip-inner { gap:16px; }
-  .bis-strip-item { font-size:11px; }
+  .bis-strip { overflow:hidden; }
+  .bis-strip-inner { gap:10px; flex-direction:column; align-items:center; text-align:center; }
+  .bis-strip-item { font-size:12px; }
 
   /* SALE BANNER */
   .sale-banner { padding:16px; }
@@ -358,8 +359,9 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
   .sale-cta { width:100%; text-align:center; padding:12px; }
 
   /* TRUST BAR */
-  .trust-inner { gap:16px; padding:0 16px; justify-content:flex-start; overflow-x:auto; flex-wrap:nowrap; }
-  .trust-item { font-size:12px; white-space:nowrap; flex-shrink:0; }
+  .trust-bar { overflow:hidden; }
+  .trust-inner { gap:10px; padding:8px 16px; justify-content:center; flex-wrap:wrap; overflow:hidden; }
+  .trust-item { font-size:11px; white-space:nowrap; flex-shrink:0; }
 
   /* SECTIONS */
   .section { padding:40px 16px; }
