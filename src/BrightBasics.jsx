@@ -723,7 +723,7 @@ export default function BrightBasics() {
                 <span className="sale-tag">{active.tag}</span>
                 <div className="sale-title" style={{color:active.color}}>{active.title}</div>
               </div>
-              <div style={{display:"flex",alignItems:"center",gap:16,flexWrap:"wrap"}}>
+              <div style={{display:"flex",alignItems:"center",gap:16,flexWrap:"wrap",justifyContent:"center",width:"100%"}}>
                 <div className="sale-timer">
                   {[[days,"Days"],[hrs,"Hrs"],[mins,"Mins"]].map(([v,l],i) => (
                     <div key={l} style={{display:"flex",alignItems:"center",gap:8}}>
