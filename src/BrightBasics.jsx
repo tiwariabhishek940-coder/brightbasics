@@ -320,6 +320,8 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
   .hero-cards { grid-template-columns:1fr; gap:10px; }
   .hcard { padding:14px; }
   .hcard.wide { flex-direction:column; align-items:flex-start; gap:10px; }
+  .hero-cards { overflow:hidden; }
+  .hcard { width:100%; box-sizing:border-box; }
   .hcard-emoji { font-size:36px; }
   .hcard-name { font-size:13px; }
   .hcard-price { font-size:15px; }
