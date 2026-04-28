@@ -168,6 +168,49 @@ body { font-family: 'Nunito', sans-serif; background: var(--off-white); color: v
 .toast-emoji { font-size: 20px; }
 .toast-view { color: var(--yellow); font-weight: 900; cursor: pointer; margin-left: 8px; }
 .toast-view:hover { text-decoration: underline; }
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 768px) {
+
+  /* NAV */
+  .plp-nav-inner { padding:0 14px; height:58px; }
+  .plp-logo { font-size:20px; }
+  .plp-logo img { width:44px; height:44px; }
+  .plp-search { display:none; }
+  .plp-nav-links { display:none; }
+  .plp-nav-icons { margin-left:auto; }
+
+  /* BREADCRUMB & AGE BAR */
+  .plp-breadcrumb { padding:8px 14px; font-size:12px; }
+  .plp-age-bar { padding:10px 14px; gap:8px; }
+  .plp-age-label { display:none; }
+  .plp-age-pill { padding:6px 12px; font-size:11px; }
+
+  /* MAIN LAYOUT - stack sidebar above products */
+  .plp-wrap { grid-template-columns:1fr !important; padding:14px; gap:14px; }
+
+  /* SIDEBAR */
+  .sidebar { position:static !important; top:auto; }
+
+  /* RESULTS BAR */
+  .results-bar { flex-direction:column; align-items:flex-start; gap:10px; padding:10px 0; }
+  .results-count { font-size:14px; }
+  .sort-controls { width:100%; }
+  .sort-select { width:100%; }
+
+  /* PRODUCT GRID */
+  .product-grid { grid-template-columns:repeat(2,1fr) !important; gap:12px; }
+  .product-grid.list { grid-template-columns:1fr !important; }
+  .pc-img { height:140px; font-size:56px; }
+  .pc-name { font-size:13px; }
+  .pc-price { font-size:17px; }
+  .pc-body { padding:10px; }
+  .pc-desc { display:none; }
+}
+
+@media (max-width: 400px) {
+  .product-grid { grid-template-columns:1fr !important; }
+}
+
 `;
 
 const ALL_PRODUCTS = [
