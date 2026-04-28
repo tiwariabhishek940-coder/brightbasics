@@ -172,39 +172,41 @@ body { font-family: 'Nunito', sans-serif; background: var(--off-white); color: v
 @media (max-width: 768px) {
 
   /* NAV */
-  .plp-nav-inner { padding:0 14px; height:58px; }
-  .plp-logo { font-size:20px; }
-  .plp-logo img { width:44px; height:44px; }
-  .plp-search { display:none; }
-  .plp-nav-links { display:none; }
-  .plp-nav-icons { margin-left:auto; }
+  .nav-inner { padding:0 14px !important; height:58px !important; }
+  .search-bar { display:none !important; }
+  .nav-right .nav-link { display:none; }
+  .logo img { width:44px !important; height:44px !important; }
+  .logo-text { font-size:20px !important; }
 
-  /* BREADCRUMB & AGE BAR */
-  .plp-breadcrumb { padding:8px 14px; font-size:12px; }
-  .plp-age-bar { padding:10px 14px; gap:8px; }
-  .plp-age-label { display:none; }
-  .plp-age-pill { padding:6px 12px; font-size:11px; }
+  /* AGE STRIP */
+  .age-strip { padding:10px 14px; }
+  .age-strip-inner { gap:8px; }
+  .age-label { display:none; }
+  .age-pill { padding:6px 12px; font-size:11px; }
 
-  /* MAIN LAYOUT - stack sidebar above products */
-  .plp-wrap { grid-template-columns:1fr !important; padding:14px; gap:14px; }
+  /* BREADCRUMB */
+  .breadcrumb { padding:8px 14px; }
+  .breadcrumb-inner { font-size:12px; }
+
+  /* MAIN LAYOUT - sidebar stacks above products */
+  .plp-wrap { grid-template-columns:1fr !important; padding:14px !important; gap:14px !important; }
 
   /* SIDEBAR */
-  .sidebar { position:static !important; top:auto; }
+  .sidebar { position:static !important; top:auto !important; }
 
-  /* RESULTS BAR */
-  .results-bar { flex-direction:column; align-items:flex-start; gap:10px; padding:10px 0; }
-  .results-count { font-size:14px; }
-  .sort-controls { width:100%; }
-  .sort-select { width:100%; }
+  /* TOP BAR */
+  .plp-topbar { flex-direction:column; align-items:flex-start; gap:10px; }
+  .plp-controls { width:100%; }
+  .sort-select { flex:1; }
 
   /* PRODUCT GRID */
-  .product-grid { grid-template-columns:repeat(2,1fr) !important; gap:12px; }
+  .product-grid { grid-template-columns:repeat(2,1fr) !important; gap:12px !important; }
   .product-grid.list { grid-template-columns:1fr !important; }
-  .pc-img { height:140px; font-size:56px; }
-  .pc-name { font-size:13px; }
-  .pc-price { font-size:17px; }
-  .pc-body { padding:10px; }
-  .pc-desc { display:none; }
+  .pcard-img { height:140px !important; font-size:56px !important; }
+  .pcard-name { font-size:13px !important; }
+  .pcard-price { font-size:17px !important; }
+  .pcard-body { padding:10px !important; }
+  .pcard-desc { display:none !important; }
 }
 
 @media (max-width: 400px) {
@@ -353,10 +355,10 @@ export default function ProductListing() {
       </div>
 
       {/* MAIN */}
-      <div className="plp-wrap">
+      <div className="plp-wrap" style={{gridTemplateColumns: window.innerWidth <= 768 ? "1fr" : "260px 1fr", padding: window.innerWidth <= 768 ? "14px" : "28px 24px"}}>
 
         {/* SIDEBAR */}
-        <aside className="sidebar">
+        <aside className="sidebar" style={{position: window.innerWidth <= 768 ? "static" : "sticky"}}>
           <div className="sidebar-header">
             <div className="sidebar-title">Filters</div>
             <button className="clear-btn" onClick={clearFilters}>Clear all</button>
