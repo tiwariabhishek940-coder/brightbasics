@@ -310,6 +310,32 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
 .footer-tags { display:flex; gap:8px; }
 .footer-tag { font-size:11px; color:rgba(255,255,255,0.4); background:rgba(255,255,255,0.07); border-radius:100px; padding:4px 11px; font-weight:700; }
 
+
+/* ── HAMBURGER MENU ── */
+.hamburger-btn { display:none; width:40px; height:40px; border-radius:10px; background:var(--off-white); border:1.5px solid var(--border); font-size:20px; cursor:pointer; align-items:center; justify-content:center; flex-shrink:0; }
+
+.mobile-drawer { position:fixed; top:0; left:0; height:100vh; width:280px; background:white; z-index:999; transform:translateX(-100%); transition:transform 0.3s ease; box-shadow:4px 0 24px rgba(0,0,0,0.15); display:flex; flex-direction:column; }
+.mobile-drawer.open { transform:translateX(0); }
+.drawer-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.4); z-index:998; opacity:0; pointer-events:none; transition:opacity 0.3s; }
+.drawer-overlay.open { opacity:1; pointer-events:all; }
+
+.drawer-header { background:var(--teal); padding:20px; display:flex; align-items:center; justify-content:space-between; }
+.drawer-logo { font-family:'Fraunces',serif; font-size:22px; font-weight:700; color:white; }
+.drawer-close { width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,0.2); border:none; color:white; font-size:20px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+
+.drawer-search { padding:14px 16px; border-bottom:1px solid var(--border); }
+.drawer-search input { width:100%; border:2px solid var(--border); border-radius:100px; padding:10px 16px; font-family:'Nunito',sans-serif; font-size:14px; font-weight:600; outline:none; color:var(--text); }
+.drawer-search input:focus { border-color:var(--teal); }
+
+.drawer-nav { flex:1; overflow-y:auto; padding:8px 0; }
+.drawer-nav-item { display:flex; align-items:center; gap:14px; padding:14px 20px; font-size:15px; font-weight:800; color:var(--text); cursor:pointer; border-radius:0; transition:background 0.15s; }
+.drawer-nav-item:hover { background:var(--teal-light); color:var(--teal); }
+.drawer-nav-item .dni-icon { font-size:22px; width:32px; text-align:center; }
+.drawer-nav-divider { height:1px; background:var(--border); margin:8px 16px; }
+
+.drawer-footer { padding:16px; background:var(--off-white); }
+.drawer-wa-btn { width:100%; background:#25D366; color:white; border:none; border-radius:100px; padding:14px; font-size:15px; font-weight:900; font-family:'Nunito',sans-serif; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; }
+
 /* ── MOBILE RESPONSIVE ───────────────────────────────────── */
 @media (max-width: 768px) {
 
@@ -321,6 +347,7 @@ body { font-family:'Nunito',sans-serif; background:var(--white); color:var(--tex
   .nav-links { display:none; }
   .nav-icons { margin-left:auto; }
   .icon-btn { width:36px; height:36px; font-size:15px; }
+  .hamburger-btn { display:flex !important; }
 
   /* AGE BAR */
   .age-bar-inner { padding:10px 14px; gap:8px; }
@@ -599,6 +626,7 @@ export default function BrightBasics() {
   const [activeNeed, setActiveNeed] = useState('ASD');
 
   const handleWish = (id) => setLocalWish(w => w.includes(id) ? w.filter(x=>x!==id) : [...w,id]);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const isMobile = window.innerWidth <= 768;
 
   return (
@@ -622,6 +650,7 @@ export default function BrightBasics() {
             <button className="nav-link">About Us</button>
             <button className="nav-link">Community</button>
           </div>
+          <button className="hamburger-btn" onClick={() => setDrawerOpen(true)}>☰</button>
           <div className="nav-icons">
             <button className="icon-btn">👤</button>
             <button className="icon-btn" style={{position:"relative"}} onClick={() => navigate("cart")}>
@@ -1246,6 +1275,40 @@ export default function BrightBasics() {
           </div>
         </div>
       </footer>
+      {/* MOBILE DRAWER */}
+      <div className={`drawer-overlay${drawerOpen?" open":""}`} onClick={() => setDrawerOpen(false)}/>
+      <div className={`mobile-drawer${drawerOpen?" open":""}`}>
+        <div className="drawer-header">
+          <div className="drawer-logo"><span style={{color:"#FFD23F"}}>Bright</span>Basics</div>
+          <button className="drawer-close" onClick={() => setDrawerOpen(false)}>×</button>
+        </div>
+        <div className="drawer-search">
+          <input placeholder="🔍 Search toys, books, kits…"/>
+        </div>
+        <div className="drawer-nav">
+          {[
+            {icon:"🏠", label:"Home",            action:() => { navigate("home"); setDrawerOpen(false); }},
+            {icon:"🛍️", label:"All Products",    action:() => { navigate("products"); setDrawerOpen(false); }},
+            {icon:"🎁", label:"AI Gift Finder",  action:() => { navigate("gift"); setDrawerOpen(false); }},
+            {icon:"🧩", label:"DIY Projects",    action:() => setDrawerOpen(false)},
+            {icon:"💜", label:"Special Needs",   action:() => setDrawerOpen(false)},
+            {icon:"ℹ️",  label:"About Us",        action:() => setDrawerOpen(false)},
+          ].map(item => (
+            <div key={item.label} className="drawer-nav-item" onClick={item.action}>
+              <span className="dni-icon">{item.icon}</span>
+              {item.label}
+            </div>
+          ))}
+          <div className="drawer-nav-divider"/>
+          <div className="drawer-nav-item" onClick={() => { navigate("cart"); setDrawerOpen(false); }}>
+            <span className="dni-icon">🛒</span>
+            Cart {cartCount > 0 && <span style={{background:"var(--orange)",color:"white",borderRadius:"100px",padding:"2px 8px",fontSize:11,fontWeight:900,marginLeft:4}}>{cartCount}</span>}
+          </div>
+        </div>
+        <div className="drawer-footer">
+          <button className="drawer-wa-btn">📲 Order on WhatsApp</button>
+        </div>
+      </div>
     </>
   );
 }
